@@ -1,0 +1,4 @@
+import Link from "next/link";import Hero3D from "./Hero3D";
+export default function CTA({title="Ready to build what's next?",text="Tell us what you're imagining. We'll help turn it into a digital experience."}:{title?:string;text?:string}){
+ return <section className="dark-s relative overflow-hidden px-6 py-28"><Hero3D className="absolute inset-0 opacity-60"/><div className="relative mx-auto max-w-3xl text-center"><h2 className="font-display text-4xl md:text-6xl font-bold">{title}</h2><p className="mt-5 text-white/75">{text}</p>
+ <div className="mt-8 flex flex-wrap justify-center gap-4"><Link href="/contact" data-magnetic className="rounded-full bg-gradient-to-r from-prime to-bright px-7 py-3 font-semibold">Start a project</Link><Link href="/contact" className="glass rounded-full px-7 py-3">Talk to our team</Link></div></div></section>}

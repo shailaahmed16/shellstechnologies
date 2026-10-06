@@ -1,0 +1,8 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{background:#FAF9FF;color:#171126;font-family:var(--f-b),sans-serif}
+.dark-s{background:radial-gradient(80% 60% at 70% 20%,#4a1d8f 0,#1a0b33 55%,#0d0618 100%);color:#fff}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(168,85,247,.3)}
+.grid-bg{background-image:linear-gradient(rgba(168,85,247,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.12) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(70% 70% at 60% 40%,#000,transparent)}
+:focus-visible{outline:2px solid #A855F7;outline-offset:3px}
+@media(pointer:fine){body.cc,body.cc a,body.cc button{cursor:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

@@ -1,0 +1,17 @@
+export type Service={slug:string;n:string;title:string;blurb:string;builds:string[];tech:string[];cases:string[];faq:[string,string][]};
+const f=(t:string):[string,string][]=>[[`How long does ${t} take?`,"Most projects take 4–16 weeks. We give a fixed scope and timeline after discovery."],["Do you provide support after launch?","Yes. We offer monitoring, updates and a support plan."]];
+const S=(slug:string,n:string,title:string,blurb:string,builds:string[],tech:string[],cases:string[]):Service=>({slug,n,title,blurb,builds,tech,cases,faq:f(title.toLowerCase())});
+export const services:Service[]=[
+S("web-development","01","Website Development","Fast, search-ready websites and web applications.",["Corporate websites","Landing pages","Web applications","Headless CMS","SEO","Core Web Vitals"],["Next.js","React","TypeScript","Tailwind"],["Marketing site","Customer portal"]),
+S("mobile-app-development","02","Mobile App Development","iOS and Android apps people keep using.",["Native apps","Cross-platform apps","Offline sync","Push notifications"],["React Native","Swift","Kotlin","Firebase"],["Booking app","Field-service app"]),
+S("software-development","03","Custom Software Development","Software shaped around how your business runs.",["Internal tools","Platforms","APIs","Integrations"],["Node","Python","Postgres","Docker"],["Operations platform","Billing system"]),
+S("ai-agent-development","04","AI Agent Development","Agents that read, decide and act with your tools.",["Support agents","RAG assistants","Voice AI","Tool-using agents"],["LLM APIs","LangChain","Vector DBs","Python"],["Support agent","Knowledge assistant"]),
+S("ai-automation","05","AI Automation","Remove repetitive work from your workflows.",["Document processing","Workflow automation","Predictive systems","Business intelligence"],["Python","n8n","OCR","Analytics"],["Invoice processing","Lead routing"]),
+S("3d-websites","06","3D Website Development","Interactive WebGL experiences that stay fast.",["3D landing pages","Product configurators","Scroll stories","Virtual showrooms"],["Three.js","R3F","GSAP","GLB"],["Product configurator","Brand experience"]),
+S("3d-apps","07","3D Apps & AR/VR","Immersive apps for inspection, training and sales.",["AR product views","VR training","3D simulations","Digital twins"],["WebXR","Unity","Three.js","Blender"],["AR showroom","Training simulation"]),
+S("ui-ux-design","08","UI/UX Design","Research-led interfaces and design systems.",["User research","Wireframes","Design systems","Prototypes"],["Figma","Storybook","Usability testing"],["App redesign","Design system"]),
+S("ecommerce-development","09","E-commerce Development","Stores built to convert and scale.",["Custom storefronts","Checkout flows","Payments","Inventory sync"],["Shopify","Stripe","Next.js","Headless"],["D2C store","B2B catalogue"]),
+S("digital-marketing","10","Digital Marketing & SEO","Search and campaigns measured by real outcomes.",["Technical SEO","Content strategy","Paid media","Analytics"],["GA4","Search Console","Ads platforms"],["SEO growth","Lead-gen campaign"]),
+S("cloud-devops","11","Cloud & DevOps","Reliable, secure infrastructure and delivery.",["CI/CD","Cloud migration","Monitoring","Security hardening"],["AWS","Kubernetes","Terraform","GitHub Actions"],["Cloud migration","Pipeline rebuild"])];
+export const bySlug=(s:string)=>services.find(x=>x.slug===s)!;
+export const process=["Discover","Plan","Design","Develop","Test","Launch","Support"];

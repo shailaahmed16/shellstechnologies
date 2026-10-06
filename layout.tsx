@@ -1,0 +1,4 @@
+import "./globals.css";import {Inter,Space_Grotesk} from "next/font/google";import Navbar from "@/components/Navbar";import Footer from "@/components/Footer";import PageTransition from "@/components/PageTransition";import CustomCursor from "@/components/CustomCursor";
+const d=Space_Grotesk({subsets:["latin"],variable:"--f-d"}),b=Inter({subsets:["latin"],variable:"--f-b"});
+export const metadata={title:"Shells Technologies",description:"Software, AI and immersive 3D digital experiences."};
+export default function L({children}:{children:React.ReactNode}){return <html lang="en" className={`${d.variable} ${b.variable}`}><body><a href="#main" className="sr-only focus:not-sr-only">Skip to content</a><CustomCursor/><Navbar/><main id="main"><PageTransition>{children}</PageTransition></main><Footer/></body></html>}
